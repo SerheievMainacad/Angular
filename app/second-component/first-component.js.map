@@ -1,0 +1,1 @@
+{"version":3,"file":"first-component.js","sourceRoot":"","sources":["first-component.ts"],"names":[],"mappings":";;;;;;;;AAAA,sCAA0C;AAQ1C;IAAA;IAA6B,CAAC;IAAjB,cAAc;QAN1B,gBAAS,CAAC;YACT,QAAQ,EAAE,iBAAiB;YAC3B,8BAA8B;YAC9B,WAAW,EAAE,0CAA0C;YACvD,SAAS,EAAE,CAAC,yCAAyC,CAAC;SACvD,CAAC;OACW,cAAc,CAAG;IAAD,qBAAC;CAAA,AAA9B,IAA8B;AAAjB,wCAAc"}

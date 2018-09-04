@@ -9,12 +9,28 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var AppComponent = /** @class */ (function () {
     function AppComponent() {
+        this.appName = 'My first app';
+        this.SlideNumber = 0;
+        this.goods = [
+            { name: 'laptop', price: 2000 },
+            { name: 'phone', price: 4000 },
+            { name: 'kettle', price: 5000 },
+            { name: 'ball', price: 1000 },
+            { name: 'rocket', price: 4000 }
+        ];
     }
+    AppComponent.prototype.hello = function () {
+        alert('hello');
+    };
+    AppComponent.prototype.handleSwitch = function (value) {
+        this.SlideNumber = value;
+    };
     AppComponent = __decorate([
         core_1.Component({
+            moduleId: module.id,
             selector: 'app-component',
-            templateUrl: 'app/app-component.html',
-            styleUrls: ['app/app.component.css']
+            templateUrl: 'app-component.html',
+            styleUrls: ['app.component.css']
         })
     ], AppComponent);
     return AppComponent;
