@@ -1,1 +1,49 @@
 <h1>Todo component</h1>
+<div id="todoWrap">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+
+        <div class="form-row align-items-center">
+          <div class="col-10">
+            <label class="sr-only" for="inlineFormInput">Name</label>
+            <input type="text" [(ngModel)]="newTaskName" class="form-control mb-2" id="inlineFormInput" placeholder="Task Name">
+          </div>
+          <div class="col-2">
+            <button class="btn btn-primary mb-2" (click)="add()">add</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <table class="table table-border">
+          <thead>
+            <th>taskName</th>
+            <th>Status</th>
+            <th>Controls</th>
+          </thead>
+          <tbody>
+            <tr *ngFor="let task of tasks" [class.completed]="task.isCompleted">
+              <td>
+                <p [style.display]="task.editable ? 'none' : 'block'">{{task.name}}</p>
+                <span>
+                  <input type="text" [(ngModel)]="task.name" [style.display]="task.editable ? 'block' : 'none'">
+                </span>
+              </td>
+              <td>
+                <input type="checkbox" [(ngModel)]="task.isCompleted">
+              </td>
+              <td>
+                <button (click)="edit(task)">edit</button>
+                <button>save</button>
+                <button>delete</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

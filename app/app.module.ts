@@ -12,6 +12,7 @@ import { bindingComponent } from './binding-component/binding-component';
 import { directiveComponent } from './directive-component/directive-component';
 import { todoModule } from './todo/todo.module';
 import { todoComponent } from './todo/todo-component/todo-component';
+import { storageService } from './storage.service';
 
 @NgModule({
   imports: [
@@ -38,6 +39,7 @@ import { todoComponent } from './todo/todo-component/todo-component';
     bindingComponent,
     directiveComponent
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  providers: [storageService]
 })
 export class AppModule {}

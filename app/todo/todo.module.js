@@ -9,12 +9,13 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var common_1 = require("@angular/common");
 var todo_component_1 = require("./todo-component/todo-component");
+var forms_1 = require("@angular/forms");
 var todoModule = /** @class */ (function () {
     function todoModule() {
     }
     todoModule = __decorate([
         core_1.NgModule({
-            imports: [common_1.CommonModule],
+            imports: [common_1.CommonModule, forms_1.FormsModule],
             declarations: [todo_component_1.todoComponent],
             exports: [todo_component_1.todoComponent]
         })

@@ -20,6 +20,7 @@ var binding_component_1 = require("./binding-component/binding-component");
 var directive_component_1 = require("./directive-component/directive-component");
 var todo_module_1 = require("./todo/todo.module");
 var todo_component_1 = require("./todo/todo-component/todo-component");
+var storage_service_1 = require("./storage.service");
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
@@ -49,7 +50,8 @@ var AppModule = /** @class */ (function () {
                 binding_component_1.bindingComponent,
                 directive_component_1.directiveComponent
             ],
-            bootstrap: [app_component_1.AppComponent]
+            bootstrap: [app_component_1.AppComponent],
+            providers: [storage_service_1.storageService]
         })
     ], AppModule);
     return AppModule;

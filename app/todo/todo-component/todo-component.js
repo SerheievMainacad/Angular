@@ -5,18 +5,49 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
+var storage_service_1 = require("../../storage.service");
 var todoComponent = /** @class */ (function () {
-    function todoComponent() {
+    function todoComponent(storageService) {
+        this.storageService = storageService;
+        this.key = 'data';
+        this.tasks = [];
+        this.newTaskName = '';
     }
+    todoComponent.prototype.ngOnInit = function () {
+        if (this.storageService.getData(this.key)) {
+            this.tasks = this.storageService.getData(this.key);
+        }
+        else {
+            this.tasks = [
+                { name: 'HTML5', isCompleted: false, editable: false },
+                { name: 'CSS3', isCompleted: false, editable: false }
+            ];
+        }
+    };
+    todoComponent.prototype.ngOnDestroy = function () {
+        this.storageService.setData(this.key, this.tasks);
+    };
+    todoComponent.prototype.add = function () {
+        this.tasks.push({ name: this.newTaskName, isCompleted: false, editable: false });
+        this.newTaskName = '';
+    };
+    todoComponent.prototype.edit = function (task) {
+        task.editable = true;
+    };
+    todoComponent.prototype.save = function (task) { };
     todoComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
             selector: 'todo-component',
             templateUrl: 'todo-component.html',
             styleUrls: ['todo-component.css']
-        })
+        }),
+        __metadata("design:paramtypes", [storage_service_1.storageService])
     ], todoComponent);
     return todoComponent;
 }());
