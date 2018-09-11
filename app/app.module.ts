@@ -10,17 +10,21 @@ import { newComponentChild1 } from './new-component/new-component-child-1/new-co
 import { newComponentChild2 } from './new-component/new-component-child-2/new-component-child2';
 import { bindingComponent } from './binding-component/binding-component';
 import { directiveComponent } from './directive-component/directive-component';
+import { todoModule } from './todo/todo.module';
+import { todoComponent } from './todo/todo-component/todo-component';
 
 @NgModule({
   imports: [
     BrowserModule,
     FormsModule,
+    todoModule,
     RouterModule.forRoot([
       { path: 'first', component: firstComponent },
       { path: 'second', component: secondComponent },
       { path: 'newchild', component: newComponent },
       { path: 'binding', component: bindingComponent },
       { path: 'directive', component: directiveComponent },
+      { path: 'todo', component: todoComponent },
       { path: '', redirectTo: 'first', pathMatch: 'full' }
     ])
   ],

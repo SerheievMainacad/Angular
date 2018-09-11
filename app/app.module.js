@@ -18,6 +18,8 @@ var new_component_child1_1 = require("./new-component/new-component-child-1/new-
 var new_component_child2_1 = require("./new-component/new-component-child-2/new-component-child2");
 var binding_component_1 = require("./binding-component/binding-component");
 var directive_component_1 = require("./directive-component/directive-component");
+var todo_module_1 = require("./todo/todo.module");
+var todo_component_1 = require("./todo/todo-component/todo-component");
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
@@ -26,12 +28,14 @@ var AppModule = /** @class */ (function () {
             imports: [
                 platform_browser_1.BrowserModule,
                 forms_1.FormsModule,
+                todo_module_1.todoModule,
                 router_1.RouterModule.forRoot([
                     { path: 'first', component: first_component_1.firstComponent },
                     { path: 'second', component: second_component_1.secondComponent },
                     { path: 'newchild', component: new_component_1.newComponent },
                     { path: 'binding', component: binding_component_1.bindingComponent },
                     { path: 'directive', component: directive_component_1.directiveComponent },
+                    { path: 'todo', component: todo_component_1.todoComponent },
                     { path: '', redirectTo: 'first', pathMatch: 'full' }
                 ])
             ],
