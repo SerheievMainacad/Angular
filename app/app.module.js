@@ -16,6 +16,8 @@ var second_component_1 = require("./second-component/second-component");
 var new_component_1 = require("./new-component/new-component");
 var new_component_child1_1 = require("./new-component/new-component-child-1/new-component-child1");
 var new_component_child2_1 = require("./new-component/new-component-child-2/new-component-child2");
+var binding_component_1 = require("./binding-component/binding-component");
+var directive_component_1 = require("./directive-component/directive-component");
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
@@ -28,10 +30,21 @@ var AppModule = /** @class */ (function () {
                     { path: 'first', component: first_component_1.firstComponent },
                     { path: 'second', component: second_component_1.secondComponent },
                     { path: 'newchild', component: new_component_1.newComponent },
+                    { path: 'binding', component: binding_component_1.bindingComponent },
+                    { path: 'directive', component: directive_component_1.directiveComponent },
                     { path: '', redirectTo: 'first', pathMatch: 'full' }
                 ])
             ],
-            declarations: [app_component_1.AppComponent, first_component_1.firstComponent, second_component_1.secondComponent, new_component_1.newComponent, new_component_child1_1.newComponentChild1, new_component_child2_1.newComponentChild2],
+            declarations: [
+                app_component_1.AppComponent,
+                first_component_1.firstComponent,
+                second_component_1.secondComponent,
+                new_component_1.newComponent,
+                new_component_child1_1.newComponentChild1,
+                new_component_child2_1.newComponentChild2,
+                binding_component_1.bindingComponent,
+                directive_component_1.directiveComponent
+            ],
             bootstrap: [app_component_1.AppComponent]
         })
     ], AppModule);

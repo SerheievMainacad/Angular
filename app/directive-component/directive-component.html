@@ -1,0 +1,89 @@
+<h1>Directives</h1>
+<h2>Structural directives</h2>
+<!-- ngFor -->
+<ul>
+  <li *ngFor="let person of persons">{{person.name}}</li>
+</ul>
+
+<table>
+  <thead>
+    <tr>
+      <th>N</th>
+      <th>name</th>
+      <th>age</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let person of persons; let i = index; let e = even; let o = odd;" [style.background-color]="e ? 'grey' : 'red'">
+      <td>{{i+1}}</td>
+      <td>{{person.name}}</td>
+      <td>{{person.age}}</td>
+    </tr>
+  </tbody>
+</table>
+
+<!--ngSwitch  -->
+<input type="text" [(ngModel)]="num">
+<select [(ngModel)]="num">
+  <option value="1">1</option>
+  <option value="2">2</option>
+  <option value="3">3</option>
+</select>
+<div [ngSwitch]="num">
+  <div *ngSwitchCase="'0'">
+    <h1>Case 0</h1>
+  </div>
+  <div *ngSwitchCase="'1'">
+    <h1>Case 1</h1>
+  </div>
+  <div *ngSwitchCase="'2'">
+    <h1>Case 2</h1>
+  </div>
+  <div *ngSwitchDefault>
+    <h1>Case ngSwitchDefault</h1>
+  </div>
+</div>
+
+<!-- ng-If -->
+
+<input type="checkbox" [(ngModel)]="showDiv">
+
+<div *ngIf="showDiv">
+  <h1> Some Div</h1>
+</div>
+
+<!-- style binding -->
+<div [style.display]="showDiv ? 'block': 'none'">
+  <h2>Another Div</h2>
+</div>
+
+<!--  -->
+<h2>Attribute directives</h2>
+<!--ngClass-->
+
+
+<label for="error">
+  error
+  <input type="checkbox" name="error" [(ngModel)]="classes.error">
+</label>
+<label for="highlighted">
+  highlighted
+  <input type="checkbox" name="highlighted" [(ngModel)]="classes.highlighted">
+</label>
+<label for="uppercase">
+  uppercase
+  <input type="checkbox" name="uppercase" [(ngModel)]="classes.uppercase">
+</label>
+
+<h2 [ngClass]="classes">ng class directive</h2>
+
+<h2 [ngClass]="'error uppercase'">ng class directive</h2>
+
+<h2 [ngClass]="['error', 'uppercase']">ng class directive</h2>
+
+
+
+
+<div [ngStyle]="styles">
+
+</div>

@@ -17,6 +17,10 @@ var newComponentChild2 = /** @class */ (function () {
         core_1.Input(),
         __metadata("design:type", String)
     ], newComponentChild2.prototype, "componentTitle", void 0);
+    __decorate([
+        core_1.Input(),
+        __metadata("design:type", Number)
+    ], newComponentChild2.prototype, "counter", void 0);
     newComponentChild2 = __decorate([
         core_1.Component({
             moduleId: module.id,

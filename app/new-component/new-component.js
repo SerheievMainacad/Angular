@@ -10,6 +10,38 @@ var core_1 = require("@angular/core");
 var newComponent = /** @class */ (function () {
     function newComponent() {
     }
+    newComponent.prototype.catchCounter = function (value) {
+        this.counterFromChild = value;
+        console.log("Counter from child component " + value);
+    };
+    // lifecycle hooks
+    newComponent.prototype.ngOnChanges = function () {
+        console.log('OnChanges');
+        //if(this.counter){}else{this.counter = 'connection issue'}
+    };
+    newComponent.prototype.ngOnInit = function () {
+        console.log('OnInit');
+        // http.get()
+    };
+    newComponent.prototype.ngDoCheck = function () {
+        console.log('DoCheck');
+    };
+    newComponent.prototype.ngAfterContentInit = function () {
+        console.log('AfterContentInit');
+    };
+    newComponent.prototype.ngAfterContentChecked = function () {
+        console.log('AfterContentChecked');
+    };
+    newComponent.prototype.ngAfterViewInit = function () {
+        console.log('AfterViewInit');
+    };
+    newComponent.prototype.ngAfterViewChecked = function () {
+        console.log('AfterViewChecked');
+    };
+    newComponent.prototype.ngOnDestroy = function () {
+        console.log('OnDestroy');
+        //http.post-
+    };
     newComponent = __decorate([
         core_1.Component({
             moduleId: module.id,

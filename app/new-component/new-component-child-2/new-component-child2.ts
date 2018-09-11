@@ -9,4 +9,7 @@ import { Component, Input } from '@angular/core';
 export class newComponentChild2 {
   @Input()
   componentTitle: string;
+
+  @Input()
+  counter: number;
 }
