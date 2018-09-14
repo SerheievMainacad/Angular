@@ -7,10 +7,14 @@
         <div class="form-row align-items-center">
           <div class="col-10">
             <label class="sr-only" for="inlineFormInput">Name</label>
-            <input type="text" [(ngModel)]="newTaskName" class="form-control mb-2" id="inlineFormInput" placeholder="Task Name">
+            <!-- template reference variable -->
+            <input type="text" minlength="5" (keyup.enter)="getClass(task.className)" (keyup.enter)="add()" maxlength="20" #task  required [(ngModel)]="newTaskName"
+              class="form-control mb-2" id="inlineFormInput" placeholder="Task Name">
           </div>
           <div class="col-2">
             <button class="btn btn-primary mb-2" (click)="add()">add</button>
+            <!-- <button class="btn btn-primary mb-2" (click)="add(task.value)">add</button> -->
+
           </div>
         </div>
 
@@ -25,7 +29,7 @@
             <th>Controls</th>
           </thead>
           <tbody>
-            <tr *ngFor="let task of tasks" [class.completed]="task.isCompleted">
+            <tr *ngFor="let task of tasks; let i = index; " [class.completed]="task.isCompleted">
               <td>
                 <p [style.display]="task.editable ? 'none' : 'block'">{{task.name}}</p>
                 <span>
@@ -37,8 +41,8 @@
               </td>
               <td>
                 <button (click)="edit(task)">edit</button>
-                <button>save</button>
-                <button>delete</button>
+                <button (click)="save(task, i)">save</button>
+                <button (click)="delete(task, i)">delete</button>
               </td>
             </tr>
           </tbody>

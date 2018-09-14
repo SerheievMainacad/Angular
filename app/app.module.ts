@@ -13,11 +13,14 @@ import { directiveComponent } from './directive-component/directive-component';
 import { todoModule } from './todo/todo.module';
 import { todoComponent } from './todo/todo-component/todo-component';
 import { storageService } from './storage.service';
+import { HttpModule } from '@angular/http';
+
 
 @NgModule({
   imports: [
     BrowserModule,
     FormsModule,
+    HttpModule,
     todoModule,
     RouterModule.forRoot([
       { path: 'first', component: firstComponent },
@@ -26,7 +29,7 @@ import { storageService } from './storage.service';
       { path: 'binding', component: bindingComponent },
       { path: 'directive', component: directiveComponent },
       { path: 'todo', component: todoComponent },
-      { path: '', redirectTo: 'first', pathMatch: 'full' }
+      { path: '', redirectTo: 'todo', pathMatch: 'full' }
     ])
   ],
   declarations: [

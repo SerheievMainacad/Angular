@@ -1,3 +1,9 @@
 .completed {
   background-color: green;
 }
+.ng-invalid.ng-dirty.ng-touched {
+  border: 1px red solid;
+}
+.ng-valid.ng-dirty.ng-touched {
+  border: 1px lightgreen solid;
+}

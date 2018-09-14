@@ -21,6 +21,7 @@ var directive_component_1 = require("./directive-component/directive-component")
 var todo_module_1 = require("./todo/todo.module");
 var todo_component_1 = require("./todo/todo-component/todo-component");
 var storage_service_1 = require("./storage.service");
+var http_1 = require("@angular/http");
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
@@ -29,6 +30,7 @@ var AppModule = /** @class */ (function () {
             imports: [
                 platform_browser_1.BrowserModule,
                 forms_1.FormsModule,
+                http_1.HttpModule,
                 todo_module_1.todoModule,
                 router_1.RouterModule.forRoot([
                     { path: 'first', component: first_component_1.firstComponent },
@@ -37,7 +39,7 @@ var AppModule = /** @class */ (function () {
                     { path: 'binding', component: binding_component_1.bindingComponent },
                     { path: 'directive', component: directive_component_1.directiveComponent },
                     { path: 'todo', component: todo_component_1.todoComponent },
-                    { path: '', redirectTo: 'first', pathMatch: 'full' }
+                    { path: '', redirectTo: 'todo', pathMatch: 'full' }
                 ])
             ],
             declarations: [
